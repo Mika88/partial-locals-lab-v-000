@@ -18,7 +18,7 @@ class Student < ActiveRecord::Base
     if student_name.empty?
       Student.all
     elsif !student_name.empty?
-      Student.all.select{|s| s.name.include?(student_name)}
+      Student.all.select{|s| s.name.downcase.include?(student_name)}
     end
   end
 end
