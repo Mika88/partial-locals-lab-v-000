@@ -18,7 +18,7 @@ class Student < ActiveRecord::Base
     if student_name.empty?
       Student.all
     elsif !student_name.empty?
-      Student.all.map{|s| s.name}.join(" ").downcase.scan(/"rob"/)
+      Student.all.map{|s| s.name.scan(/student_name/)}
     end
   end
 end
