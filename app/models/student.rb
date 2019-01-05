@@ -15,7 +15,6 @@ class Student < ActiveRecord::Base
   has_many :classrooms, through: :classroom_students
 
   def self.search(student_name)
-  binding.pry
     if student_name.empty?
       Student.all
     elsif !student_name.empty?
